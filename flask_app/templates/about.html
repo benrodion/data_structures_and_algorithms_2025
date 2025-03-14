@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+    <head>
+        <title>About Me</title>
+        <meta name="description" content="A page that tells you more about me!">
+        <meta name="keywords" content="personal home page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Inter", sans-serif;
+            }
+
+            body {
+                background-color: #f4f4f4;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                height: 100vh;
+                padding: 20px;
+            }
+
+            /* HEADER CONTAINER */
+            .header-container {
+                background: #1e1e2f; /* Deep navy for a modern look */
+                color: white;
+                padding: 40px;
+                border-radius: 12px;
+                width: 90%;
+                max-width: 700px;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                position: relative;
+                margin-top: 10px;
+            }
+
+            h1 {
+                font-size: 32px;
+                margin-bottom: 8px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+                color: #d1d1e0; /* Light muted color for better contrast */
+                opacity: 0.9;
+            }
+
+            /* CONTENT CONTAINER */
+            .container {
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                width: 90%;
+                max-width: 600px;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            p {
+                font-size: 18px;
+                color: #444;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .highlight {
+                color: #1e1e2f;
+                font-weight: bold;
+            }
+
+            /* MODERN BUTTON */
+            .btn {
+                display: inline-block;
+                padding: 12px 24px;
+                margin-top: 15px;
+                background-color: #1e1e2f;
+                color: white;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: bold;
+                transition: 0.3s ease;
+                border: none;
+                cursor: pointer;
+            }
+
+            .btn:hover {
+                background-color: #724ea6;
+            }
+
+            .profile-img {
+    display: block;
+    width: 150px; /* Adjust size as needed */
+    height: 150px;
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: cover; /* Ensures the image fills the circular space */
+    margin: 20px auto; /* Centers it with margin above and below */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+        </style>
+    </head>
+
+    <body>
+        <!-- Top Container (Heading + Subtitle) -->
+        <div class="header-container">
+            {% if heading %}
+                <h1>{{ heading }}</h1>
+            {% else %}
+                <h1>About Me</h1>
+            {% endif %}
+            <p class="subtitle">Learn more about who I am and what I do.</p>
+        </div>
+        
+        <img src="{{ url_for('static', filename='me.png') }}" class="profile-img">
+
+        <!-- Bottom Container (Content) -->
+        <div class="container">
+            <p>Hello! I'm <span class="highlight">Benedict Anderer</span>, I study  
+               <span class="highlight">Data Science for Public Policy</span> at the Hertie School of Governance. 
+               I am passionate about energy policy, green industrial policy and data science. In the past, I combined these interests in my Bachelor's thesis,
+            which has been <a href= https://www.mdpi.com/2071-1050/16/24/10948>published</a>  in the peer-reviewed
+            journal <em>Sustainability</em>.</p>
+
+            <p>In my free time, I enjoy <span class="highlight">playing with my dog, cooking and working out</span>. 
+               Feel free to reach out!</p>
+
+            <a href="https://www.linkedin.com/in/benedict-anderer-a1a45119b/" class="btn">Get in Touch on LinkedIn</a>
+        </div>
+    </body>
+</html>
+
+
+
+
